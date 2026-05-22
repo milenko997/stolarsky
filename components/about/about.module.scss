@@ -1,0 +1,100 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.about {
+  background: $color-bg-secondary;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+
+  @include respond(xl) {
+    gap: 4rem;
+  }
+
+  @include respond(lg) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.aboutImage {
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+}
+
+.aboutImageAccent {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  width: 60%;
+  height: 60%;
+  border: 1px solid $color-primary;
+  z-index: -1;
+
+  @include respond(lg) {
+    display: none;
+  }
+}
+
+.aboutContent {
+  :global(.section-title) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.aboutText {
+  margin-bottom: 3rem;
+
+  p {
+    color: $color-text-muted;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.aboutStats {
+  display: flex;
+  gap: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid $color-border-light;
+
+  @include respond(md) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.stat {
+  text-align: left;
+}
+
+.statNumber {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $color-primary;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: $color-text;
+}
