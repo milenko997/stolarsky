@@ -1,0 +1,58 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.services {
+  background: $color-bg-secondary;
+}
+
+.servicesList {
+  border-top: 1px solid $color-border;
+}
+
+.serviceItem {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid $color-border;
+  cursor: pointer;
+  transition: padding 0.5s ease, background 0.5s ease;
+
+  &:hover {
+    padding-left: 2rem;
+    background: rgba(192, 139, 92, 0.08);
+
+    .serviceTitle {
+      color: $color-primary;
+    }
+
+    .serviceArrow {
+      color: $color-primary;
+      transform: translateX(10px);
+    }
+  }
+}
+
+.serviceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.serviceTitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: $transition-fast;
+  color: $color-text;
+}
+
+.serviceArrow {
+  font-size: 2rem;
+  color: $color-text-muted;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.serviceDescription {
+  font-size: 1rem;
+  color: $color-text-muted;
+  max-width: 600px;
+}
