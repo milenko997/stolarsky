@@ -1,2 +1,102 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
+
+.footer {
+  background: $color-bg-secondary;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid $color-border-light;
+}
+
+.footerInner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 4rem;
+  align-items: start;
+
+  @include respond(lg) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+  transition: $transition-fast;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.footerTagline {
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 2rem;
+
+  a {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @include respond(lg) {
+    justify-content: center;
+  }
+}
+
+.footerSocial {
+  display: flex;
+  gap: 1rem;
+
+  @include respond(lg) {
+    justify-content: center;
+  }
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid $color-border;
+  color: $color-text-muted;
+  transition: $transition-main;
+
+  &:hover {
+    background: $color-primary;
+    border-color: $color-primary;
+    color: $color-bg;
+  }
+}
+
+.footerBottom {
+  grid-column: 1 / -1;
+  padding-top: 3rem;
+  margin-top: 2rem;
+  border-top: 1px solid $color-border-light;
+  text-align: center;
+
+  p {
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+  }
+}
