@@ -34,6 +34,7 @@ const Footer = () => {
 
         <div className={styles.footerBottom}>
           <p>&copy; {new Date().getFullYear()} Stolarsky. Sva prava zadržana.</p>
+          <p>Website napravio <a href='https://milenkoilic.dev/' className={styles.footerAuthor} target='_blank'>Milenko Ilić</a></p>
         </div>
       </div>
     </footer>
