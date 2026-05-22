@@ -1,0 +1,68 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.process {
+  background: $color-bg;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+
+  @include respond(xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.processStep {
+  position: relative;
+  padding: 3rem 2rem;
+  border: 1px solid $color-border-light;
+  transition: $transition-main;
+
+  &:hover {
+    border-color: $color-primary;
+    background: rgba(192, 139, 92, 0.05);
+
+    .processNumber {
+      color: rgba(192, 139, 92, 0.4);
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.processNumber {
+  display: block;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(192, 139, 92, 0.15);
+  margin-bottom: 2rem;
+  transition: $transition-main;
+
+  @media (max-width: 480px) {
+    font-size: 4rem;
+  }
+}
+
+.processTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  color: $color-text;
+}
+
+.processText {
+  font-size: 0.9375rem;
+  color: $color-text-muted;
+  line-height: 1.7;
+}
