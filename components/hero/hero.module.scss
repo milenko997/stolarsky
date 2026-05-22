@@ -1,0 +1,132 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.pexels.com/photos/6791495/pexels-photo-6791495.jpeg?auto=compress&cs=tinysrgb&w=1920')
+    center / cover no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.7) 0%,
+    rgba(10, 10, 10, 0.6) 50%,
+    rgba(10, 10, 10, 0.9) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+.heroLabel {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: $color-primary;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid $color-border;
+  animation: heroFadeIn 0.8s ease 0.2s both;
+
+  @media (max-width: 480px) {
+    font-size: 0.65rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.heroTitle {
+  font-size: clamp(3.5rem, 12vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  color: $color-text;
+  animation: heroFadeIn 0.8s ease 0.35s both;
+
+  @include respond(md) {
+    font-size: clamp(3rem, 15vw, 6rem);
+  }
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  color: $color-text-muted;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+  animation: heroFadeIn 0.8s ease 0.5s both;
+}
+
+.heroCta {
+  animation: heroFadeIn 0.8s ease 0.65s both;
+}
+
+.heroScroll {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+
+  span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+  }
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, $color-primary, transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
