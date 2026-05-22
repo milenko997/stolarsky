@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={`container ${styles.footerInner}`}>
         <div className={styles.footerBrand}>
-          <a href="#hero" className={styles.logo}>STOLARSKY.</a>
+          <span className={styles.logo}>STOLARSKY.</span>
           <p className={styles.footerTagline}>Izrađujemo izvrsnost od 2004. godine</p>
         </div>
 
