@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} id="header">
       <div className={`container ${styles.headerInner}`}>
-        <a href="#hero" className={styles.logo}>STOLARSKY.</a>
+        <a href="/" className={styles.logo}>STOLARSKY.</a>
         <nav className={styles.nav}>
           <button
             className={`${styles.navToggle} ${isNavOpen ? styles.active : ''}`}
