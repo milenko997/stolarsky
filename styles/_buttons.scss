@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.125rem 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid $color-border;
+  background: transparent;
+  color: $color-text;
+  cursor: pointer;
+  transition: $transition-main;
+
+  @media (max-width: 480px) {
+    padding: 1rem 2rem;
+    font-size: 0.8125rem;
+  }
+
+  &-primary:hover {
+    background: $color-primary;
+    border-color: $color-primary;
+    color: $color-bg;
+    transform: translateY(-2px);
+  }
+}

@@ -1,7 +1,5 @@
-@use '@/styles/mixins' as *;
-@use '@/styles/fonts' as *;
-@use '@/styles/variables' as *;
-
-html {
-  scroll-behavior: smooth;
-}
+@use '@/styles/reset';
+@use '@/styles/layout';
+@use '@/styles/typography';
+@use '@/styles/buttons';
+@use '@/styles/animations';
